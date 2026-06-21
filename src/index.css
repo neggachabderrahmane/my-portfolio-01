@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-neon-cyan: #00f0ff;
+  --color-neon-magenta: #ff0055;
+  --color-neon-yellow: #ffea00;
+  --color-neon-green: #39ff14;
+  --color-cyber-bg: #050508;
+  --color-cyber-card: #0c0d14;
+  --color-cyber-border: #1a1c2d;
+  --color-cyber-text: #94a3b8;
+  --color-cyber-header: #f8fafc;
+}
+
+@layer utilities {
+  .text-glow-cyan {
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5), 0 0 15px rgba(0, 240, 255, 0.3);
+  }
+  .text-glow-magenta {
+    text-shadow: 0 0 8px rgba(255, 0, 85, 0.5), 0 0 15px rgba(255, 0, 85, 0.3);
+  }
+  .text-glow-green {
+    text-shadow: 0 0 8px rgba(57, 255, 20, 0.5), 0 0 15px rgba(57, 255, 20, 0.3);
+  }
+  
+  .border-glow-cyan {
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.3), inset 0 0 4px rgba(0, 240, 255, 0.2);
+    border-color: rgba(0, 240, 255, 0.5);
+  }
+  .border-glow-magenta {
+    box-shadow: 0 0 8px rgba(255, 0, 85, 0.3), inset 0 0 4px rgba(255, 0, 85, 0.2);
+    border-color: rgba(255, 0, 85, 0.5);
+  }
+  .border-glow-green {
+    box-shadow: 0 0 8px rgba(57, 255, 20, 0.3), inset 0 0 4px rgba(57, 255, 20, 0.2);
+    border-color: rgba(57, 255, 20, 0.5);
+  }
+
+  .glow-cyan-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glow-cyan-hover:hover {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5), inset 0 0 6px rgba(0, 240, 255, 0.3);
+    border-color: #00f0ff;
+    transform: translateY(-2px);
+  }
+
+  .glow-magenta-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .glow-magenta-hover:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.5), inset 0 0 6px rgba(255, 0, 85, 0.3);
+    border-color: #ff0055;
+    transform: translateY(-2px);
+  }
+}
+
+/* Custom Scrollbar CSS (Global & Webkit) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(57, 255, 20, 0.3) #050508;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(57, 255, 20, 0.3);
+  border-radius: 2.5px;
+  border: 1px solid #39ff14;
+  box-shadow: 0 0 4px rgba(57, 255, 20, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #39ff14;
+  box-shadow: 0 0 8px #39ff14;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #050508;
+  color: #94a3b8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* Global resets for index.css default scaffolding overrides */
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-inline: none !important;
+  text-align: left !important;
+  min-height: 100vh !important;
+}
+
+/* Cyberpunk terminal typing line animation */
+@keyframes blink {
+  50% { opacity: 0; }
+}
+.cursor-blink::after {
+  content: '|';
+  animation: blink 1s step-start infinite;
+  color: #00f0ff;
+  margin-left: 2px;
+}
+
+/* Custom background grid overlay */
+.grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(26, 28, 45, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 28, 45, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Diagonal scanning line effect */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.scanlines::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 10;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* CLI Viewport overrides to make sections fit inside terminal history */
+.cli-viewport section {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  min-height: 0 !important;
+  background: transparent !important;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.cli-viewport h2 {
+  font-size: 1.5rem !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.cli-viewport p, 
+.cli-viewport span, 
+.cli-viewport li {
+  font-family: inherit !important;
+  line-height: 1.5 !important;
+  color: #e2e8f0 !important;
+}
+
+.cli-viewport a, 
+.cli-viewport button {
+  pointer-events: auto !important;
+}
