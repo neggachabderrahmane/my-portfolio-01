@@ -48,7 +48,7 @@ export const AboutSkills: React.FC = () => {
       details: ['Express / NestJS frameworks', 'Real-time WebSockets Server', 'Microservices Engineering', 'Asynchronous Router Middlewares']
     },
     {
-      name: 'Flutter',
+      name: 'React-Native',
       level: 'Intermediate',
       icon: <Smartphone className="w-5 h-5" />,
       colorClass: 'text-neon-yellow border-neon-yellow/20 hover:border-neon-yellow shadow-[0_0_8px_rgba(255,234,0,0.05)] hover:shadow-[0_0_12px_rgba(255,234,0,0.2)]',
@@ -98,7 +98,7 @@ export const AboutSkills: React.FC = () => {
                   My background spans designing highly-secure database schemas, query optimizations for real-time geolocation matching, and constructing synchronization protocols.
                 </p>
                 <p className="text-cyber-text text-sm sm:text-base leading-relaxed font-sans">
-                  I combine standard core frontend languages (HTML, CSS, JavaScript) with powerful frameworks (React, Flutter, Node.js) to deliver responsive, visual, and highly functional technical interfaces.
+                  I combine standard core frontend languages (HTML, CSS, JavaScript) with powerful frameworks (React, React-Native, Node.js) to deliver responsive, visual, and highly functional technical interfaces.
                 </p>
               </div>
             </RevealWrapper>
