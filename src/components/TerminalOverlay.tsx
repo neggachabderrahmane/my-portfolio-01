@@ -349,7 +349,7 @@ export const TerminalOverlay: React.FC = () => {
         if (project === 'relizane') {
           newLines.push(
             { text: 'PROJECT DATA SPECIFICATION: RELIZANE FELLAH', type: 'success', animate: true },
-            { text: '  - Stack: Node.js, Express, MongoDB, Flutter mobile app', type: 'output', animate: true },
+            { text: '  - Stack: Node.js, Express, MongoDB, React-native mobile app', type: 'output', animate: true },
             { text: '  - Database config: 2dsphere indexing spatial match operations', type: 'output', animate: true },
             { text: '  - Challenges solved: Offline synchronization database caches', type: 'output', animate: true }
           );
@@ -410,7 +410,7 @@ export const TerminalOverlay: React.FC = () => {
       { text: '====================================================', type: 'success', animate: true },
       { text: '  [USER]        Abderrahmane', type: 'output', animate: true },
       { text: '  [ROLE]        Senior Core System Developer & UI/UX Expert', type: 'output', animate: true },
-      { text: '  [COMPILER]    React 19, TypeScript, Express, MongoDB, Flutter', type: 'output', animate: true },
+      { text: '  [COMPILER]    React 19, TypeScript, Express, MongoDB, React-Native', type: 'output', animate: true },
       { text: '  [LATENCY]     Operational parameters standard (RTT 14ms)', type: 'output', animate: true },
       { text: '  [SECURE]      Identity signature authenticated: PASS', type: 'output', animate: true },
       { text: '====================================================', type: 'success', animate: true }

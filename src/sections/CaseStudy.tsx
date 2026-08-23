@@ -52,7 +52,7 @@ export const CaseStudy: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-4 border-t border-cyber-border/40">
               <div className="bg-cyber-bg/70 border border-cyber-border p-3 rounded text-left">
                 <div className="font-mono text-[10px] text-cyber-text">FRONTEND CORE</div>
-                <div className="text-white font-bold text-sm">React &amp; Flutter</div>
+                <div className="text-white font-bold text-sm">React &amp; React-Native</div>
               </div>
               <div className="bg-cyber-bg/70 border border-cyber-border p-3 rounded text-left">
                 <div className="font-mono text-[10px] text-cyber-text">BACKEND ARCHITECTURE</div>
@@ -60,7 +60,7 @@ export const CaseStudy: React.FC = () => {
               </div>
               <div className="bg-cyber-bg/70 border border-cyber-border p-3 rounded text-left">
                 <div className="font-mono text-[10px] text-cyber-text">DATABASE STACK</div>
-                <div className="text-white font-bold text-sm">MongoDB (Atlas)</div>
+                <div className="text-white font-bold text-sm">Firebase</div>
               </div>
               <div className="bg-cyber-bg/70 border border-cyber-border p-3 rounded text-left">
                 <div className="font-mono text-[10px] text-cyber-text">QUERY latency</div>

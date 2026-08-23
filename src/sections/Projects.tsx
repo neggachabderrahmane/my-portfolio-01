@@ -20,7 +20,7 @@ export const Projects: React.FC = () => {
       id: 'relizane-fellah',
       title: 'Relizane Fellah',
       description: 'A comprehensive agricultural logistics, resource planning, and distribution platform designed to connect farmers in the Relizane region with local transporters and direct markets.',
-      techStack: ['Node.js', 'Express', 'MongoDB', 'Flutter', 'Geospatial Indexing'],
+      techStack: ['Node.js', 'Express', 'Firebase', 'React', 'Geospatial Indexing'],
       liveLink: 'https://relizane-fellah.web.app/',
       detailsId: '#case-study',
       highlight: true,
