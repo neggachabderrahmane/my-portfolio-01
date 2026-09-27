@@ -37,36 +37,43 @@ export const AboutSkills: React.FC = () => {
       name: 'React.js',
       level: 'Advanced',
       icon: <Code className="w-5 h-5" />,
-      colorClass: 'text-neon-cyan border-neon-cyan/20 hover:border-neon-cyan shadow-[0_0_8px_rgba(0,240,255,0.05)] hover:shadow-[0_0_12px_rgba(0,240,255,0.2)]',
+      colorClass: 'text-cyan-400 border-cyan-400/20 hover:border-cyan-400 shadow-[0_0_8px_rgba(0,240,255,0.05)] hover:shadow-[0_0_12px_rgba(0,240,255,0.2)]',
       details: ['Redux / Context API', 'Vite / Next.js', 'Custom Performance Hooks', 'State Reconciliation']
     },
     {
       name: 'Node.js',
       level: 'Advanced',
       icon: <Cpu className="w-5 h-5" />,
-      colorClass: 'text-neon-magenta border-neon-magenta/20 hover:border-neon-magenta shadow-[0_0_8px_rgba(255,0,85,0.05)] hover:shadow-[0_0_12px_rgba(255,0,85,0.2)]',
+      colorClass: 'text-pink-500 border-pink-500/20 hover:border-pink-500 shadow-[0_0_8px_rgba(255,0,85,0.05)] hover:shadow-[0_0_12px_rgba(255,0,85,0.2)]',
       details: ['Express / NestJS frameworks', 'Real-time WebSockets Server', 'Microservices Engineering', 'Asynchronous Router Middlewares']
     },
     {
       name: 'React-Native',
       level: 'Intermediate',
       icon: <Smartphone className="w-5 h-5" />,
-      colorClass: 'text-neon-yellow border-neon-yellow/20 hover:border-neon-yellow shadow-[0_0_8px_rgba(255,234,0,0.05)] hover:shadow-[0_0_12px_rgba(255,234,0,0.2)]',
+      colorClass: 'text-yellow-400 border-yellow-400/20 hover:border-yellow-400 shadow-[0_0_8px_rgba(255,234,0,0.05)] hover:shadow-[0_0_12px_rgba(255,234,0,0.2)]',
       details: ['Cross-platform Engine', 'Bloc / Provider State', 'Offline Sync Transactions', 'Hardware Native Integrations']
     },
     {
       name: 'MongoDB',
       level: 'Advanced',
       icon: <Database className="w-5 h-5" />,
-      colorClass: 'text-neon-green border-neon-green/20 hover:border-neon-green shadow-[0_0_8px_rgba(57,255,20,0.05)] hover:shadow-[0_0_12px_rgba(57,255,20,0.2)]',
+      colorClass: 'text-emerald-500 border-emerald-500/20 hover:border-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.05)] hover:shadow-[0_0_12px_rgba(16,185,129,0.2)]',
       details: ['Geospatial indexing (2dsphere)', 'Aggregation Queries', 'Index Allocations', 'Scalable Replica Set Clusters']
+    },
+    {
+      name: 'MySQL',
+      level: 'Advanced',
+      icon: <Database className="w-5 h-5" />,
+      colorClass: 'text-blue-400 border-blue-400/20 hover:border-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.05)] hover:shadow-[0_0_12px_rgba(96,165,250,0.2)]',
+      details: ['Relational Database Modeling', 'Complex SQL Queries & Joins', 'MySQL Server & Workbench', 'Node.js ORM Integration']
     }
   ];
 
   return (
     <section id="about" className="py-24 relative overflow-hidden border-t border-cyber-border">
       {/* Background grids */}
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-cyber-bg grid-bg opacity-40 pointer-events-none"></div>
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-cyber-bg grid-bg opacity-40 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         
@@ -79,7 +86,7 @@ export const AboutSkills: React.FC = () => {
             <h2 className="text-3xl font-bold tracking-tight text-white flex items-center gap-2.5">
               ABOUT & TECHNICAL SPECIFICATION
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-magenta mt-3 rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-neon-cyan to-neon-magenta mt-3 rounded-full" />
           </div>
         </RevealWrapper>
 
@@ -151,40 +158,34 @@ export const AboutSkills: React.FC = () => {
               </h3>
             </RevealWrapper>
 
-            {/* Grid layout containing all 7 skill cards */}
+            {/* Grid layout */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {skills.map((skill, index) => (
-                <RevealWrapper 
+              {skills.map((skill) => (
+                <div 
                   key={skill.name} 
-                  direction="up" 
-                  delay={0.1 + index * 0.05}
-                  threshold={0.05}
+                  className={`bg-cyber-card border rounded-md p-5 transition-all duration-300 ${skill.colorClass} group h-full`}
                 >
-                  <div 
-                    className={`bg-cyber-card border rounded-md p-5 transition-all duration-300 ${skill.colorClass} group h-full`}
-                  >
-                    <div className="flex justify-between items-center mb-4">
-                      <div className="flex items-center gap-2">
-                        <div className="p-1.5 bg-cyber-bg rounded border border-cyber-border group-hover:border-current transition-colors">
-                          {skill.icon}
-                        </div>
-                        <span className="font-bold text-white text-sm">{skill.name}</span>
+                  <div className="flex justify-between items-center mb-4">
+                    <div className="flex items-center gap-2">
+                      <div className="p-1.5 bg-cyber-bg rounded border border-cyber-border group-hover:border-current transition-colors">
+                        {skill.icon}
                       </div>
-                      <span className="font-mono text-[9px] px-2 py-0.5 rounded bg-cyber-bg border border-cyber-border uppercase text-cyber-text">
-                        {skill.level}
-                      </span>
+                      <span className="font-bold text-white text-sm">{skill.name}</span>
                     </div>
-
-                    <ul className="space-y-1.5 font-mono text-[10px] text-cyber-text">
-                      {skill.details.map((detail, idx) => (
-                        <li key={idx} className="flex items-center gap-1.5">
-                          <span className="w-1 h-1 bg-current rounded-full" />
-                          <span>{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <span className="font-mono text-[9px] px-2 py-0.5 rounded bg-cyber-bg border border-cyber-border uppercase text-cyber-text">
+                      {skill.level}
+                    </span>
                   </div>
-                </RevealWrapper>
+
+                  <ul className="space-y-1.5 font-mono text-[10px] text-cyber-text">
+                    {skill.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-center gap-1.5">
+                        <span className="w-1 h-1 bg-current rounded-full" />
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
             </div>
 
@@ -207,4 +208,5 @@ export const AboutSkills: React.FC = () => {
     </section>
   );
 };
+
 export default AboutSkills;
