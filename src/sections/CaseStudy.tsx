@@ -94,14 +94,14 @@ export const CaseStudy: React.FC = () => {
                   </h4>
                 </div>
                 <p className="text-cyber-text text-xs sm:text-sm leading-relaxed font-sans">
-                  Rural areas in Relizane have spotty mobile connections. To prevent data loss when farmers record dispatch requests or logistics details offline, I designed a Flutter sync pipeline. 
+                  Rural areas in Relizane have spotty mobile connections. To prevent data loss when farmers record dispatch requests or logistics details offline, I designed a React-Native sync pipeline. 
                 </p>
                 <div className="p-3.5 bg-cyber-bg rounded border border-cyber-border font-mono text-[11px] text-slate-300">
                   <span className="text-neon-cyan">// Offline SQLite Queue Structure</span>
                   <br />
                   - Cache mutations locally in transactional blocks.
                   <br />
-                  - Monitor connection states via Flutter connectivity listener.
+                  - Monitor connection states via React-Native connectivity listener.
                   <br />
                   - Reconnect logic executes idempotent batches on the Node.js server.
                 </div>
@@ -151,7 +151,7 @@ export const CaseStudy: React.FC = () => {
                 <div className="space-y-4 font-mono text-[10px] text-center">
                   {/* Node 1 */}
                   <div className="py-2.5 px-4 bg-cyber-bg border border-neon-yellow/40 text-neon-yellow rounded-md max-w-[180px] mx-auto shadow-[0_0_8px_rgba(255,234,0,0.1)]">
-                    Flutter App (Mobile Client)
+                    React-Native App (Mobile Client)
                     <div className="text-[8px] text-cyber-text">SQLite / Cache Layer</div>
                   </div>
 

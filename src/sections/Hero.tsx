@@ -14,7 +14,7 @@ const TERMINAL_LOGS = [
 
 export const Hero: React.FC = () => {
   const [typedText, setTypedText] = useState('');
-  const fullText = 'COMPLEX_SYSTEMS_ENGINEER // FULL-STACK_DEVELOPER';
+  const fullText = 'SOFTWARE ENGINEER // AI & DECISIONS SUPPORT SYSTEMS';
   
   const [terminalLogs, setTerminalLogs] = useState<string[]>([]);
 
